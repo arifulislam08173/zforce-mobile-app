@@ -3,15 +3,15 @@ import api from "./api";
 export type OrderStatus = "PENDING" | "COMPLETED" | "CANCELLED";
 
 export type OrderItemInput = {
-  productId: string;   // UUID string
+  productId: string;   
   quantity: number;
-  price: number;       // REQUIRED by backend
+  price: number;       
 };
 
 export type CreateOrderPayload = {
   order: {
-    customerId: string; // UUID string
-    date?: string;      // YYYY-MM-DD
+    customerId: string; 
+    date?: string;      
     status?: OrderStatus;
     notes?: string;
   };
@@ -42,7 +42,7 @@ export type OpenOrderForCollection = {
 
 export async function createOrder(payload: CreateOrderPayload) {
   const res = await api.post("/orders", payload);
-  return res.data; // Order instance
+  return res.data;
 }
 
 export async function fetchMyOrders(params?: {
@@ -60,7 +60,7 @@ export async function fetchMyOrders(params?: {
 
 export async function fetchOrderDetails(orderId: string) {
   const res = await api.get(`/orders/${orderId}`);
-  return res.data; // Order instance
+  return res.data;
 }
 
 

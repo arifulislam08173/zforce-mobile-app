@@ -9,7 +9,7 @@ export default function TabsLayout() {
 
   // Base bar size + safe-area
   const baseHeight = Platform.OS === "ios" ? 62 : 58;
-  const extraBottom = Platform.OS === "web" ? 10 : 6; // web preview needs a bit more
+  const extraBottom = Platform.OS === "web" ? 10 : 6;
   const barHeight = baseHeight + insets.bottom + extraBottom;
 
   return (
@@ -18,7 +18,6 @@ export default function TabsLayout() {
         tabBarActiveTintColor: "#2563eb",
         tabBarInactiveTintColor: "#6b7280",
 
-        // FIX clipping (safe-area aware)
         tabBarStyle: {
           height: barHeight,
           paddingTop: 8,
@@ -28,7 +27,6 @@ export default function TabsLayout() {
           borderTopColor: "rgba(0,0,0,0.08)",
         },
 
-        // pull label UP a bit
         tabBarLabelStyle: {
           fontSize: 12,
           marginTop: 2,
@@ -46,7 +44,6 @@ export default function TabsLayout() {
 
         headerTitleStyle: { fontWeight: "900" },
 
-        // optional (nice)
         tabBarHideOnKeyboard: true,
       }}
     >

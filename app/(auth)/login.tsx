@@ -38,9 +38,6 @@ export default function Login() {
 
     try {
       setLoading(true);
-      // await login(email.trim(), password);
-      // router.replace("/(tabs)");
-
       const u = await login(email.trim(), password);
       router.replace(u?.faceEnrolled ? "/(tabs)" : "/face-enroll");
 

@@ -33,8 +33,8 @@ export type CollectionsResponse = {
 export async function fetchMyCollections(params: {
   page?: number;
   limit?: number;
-  fromDate?: string; // "YYYY-MM-DD" or ISO
-  toDate?: string;   // "YYYY-MM-DD" or ISO
+  fromDate?: string;
+  toDate?: string;   
   status?: string;
 }) {
   const res = await api.get<CollectionsResponse>("/collections/my", { params });
@@ -52,6 +52,5 @@ export async function createCollection(payload: {
 }
 
 export async function downloadReceiptPdf(collectionId: string) {
-  // NOTE: if you want later, we can download to device storage; for now we just open URL in browser.
   return `/collections/${collectionId}/receipt.pdf`;
 }

@@ -87,7 +87,6 @@ export default function AttendanceScreen() {
         distanceInterval: 3,
       },
       (p) => {
-        // don’t set state if screen unmounted
         if (!aliveRef.alive) return;
         setCoords({ lat: p.coords.latitude, lng: p.coords.longitude });
       }
@@ -124,7 +123,7 @@ export default function AttendanceScreen() {
       } catch {}
       watchRef.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [token, user?.faceEnrolled]);
 
   const punchedIn = !!today?.punchIn;

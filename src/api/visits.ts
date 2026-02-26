@@ -30,8 +30,8 @@ export type VisitsResponse = {
 export async function fetchMyVisits(params: {
   page?: number;
   limit?: number;
-  fromDate?: string; // ISO string (start of day)
-  toDate?: string;   // ISO string (end of day)
+  fromDate?: string;
+  toDate?: string;   
   status?: string;
 }) {
   const res = await api.get<VisitsResponse>("/visits/my", { params });
@@ -53,7 +53,7 @@ export async function checkOutVisit(
 
 export async function planVisit(payload: {
   customerId: string;
-  plannedAt: string; // ISO string
+  plannedAt: string; 
   notes?: string | null;
 }) {
   const res = await api.post("/visits", payload);

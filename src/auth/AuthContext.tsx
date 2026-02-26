@@ -40,7 +40,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
 
-  // prevent replace loops
   const lastNavRef = useRef<string>("");
 
   const safeReplace = (to: Href) => {
@@ -58,13 +57,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     safeReplace("/login");
   };
 
-  // handle 401 once
   useEffect(() => {
     setUnauthorizedHandler(() => logout());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
-  // bootstrap from storage
   useEffect(() => {
     (async () => {
       try {
@@ -105,7 +102,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return u;
   };
 
-  // ROUTE GUARD (single source of truth)
+  // ROUTE GUARD
   useEffect(() => {
     if (!ready) return;
 

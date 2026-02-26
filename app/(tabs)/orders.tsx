@@ -1,4 +1,3 @@
-// app/(tabs)/orders.tsx
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   View,
@@ -122,25 +121,22 @@ export default function OrdersTab() {
 
   useEffect(() => {
     load(1, 10, false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line 
   }, []);
 
-  // when screen is focused, keep list fresh
   useFocusEffect(
     useCallback(() => {
       load(pagination.page, pagination.limit, true);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line 
     }, [pagination.page, pagination.limit])
   );
 
-  // After creating an order we come back with ?refresh=1
   useEffect(() => {
     if (params.refresh === "1") {
       load(1, pagination.limit, true);
-      // clear refresh param by replacing route without params (optional)
       router.replace("/(tabs)/orders");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line 
   }, [params.refresh]);
 
   const onSearch = () => load(1, pagination.limit, false);

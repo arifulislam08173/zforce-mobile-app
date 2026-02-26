@@ -22,8 +22,8 @@ export type ExpensesResponse = {
 export async function fetchMyExpenses(params: {
   page?: number;
   limit?: number;
-  fromDate?: string; // ISO or "YYYY-MM-DD"
-  toDate?: string;   // ISO or "YYYY-MM-DD"
+  fromDate?: string; 
+  toDate?: string;   
   status?: string;
 }) {
   const res = await api.get<ExpensesResponse>("/expenses/my", { params });
@@ -35,7 +35,7 @@ export async function createExpense(payload: {
   amount: number;
   description?: string | null;
   receiptUrl?: string | null;
-  incurredAt?: string; // "YYYY-MM-DD" is ok
+  incurredAt?: string; 
 }) {
   const res = await api.post("/expenses", payload);
   return res.data;

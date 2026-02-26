@@ -4,7 +4,7 @@ export type RouteRow = {
   id: string;
   userId: string;
   customerId: string;
-  date: string; // usually YYYY-MM-DD
+  date: string; 
   notes?: string;
   userName?: string;
   customerName?: string;
@@ -25,8 +25,8 @@ export type RouteListParams = {
   limit?: number;
   search?: string;
   customerId?: string;
-  dateFrom?: string; // YYYY-MM-DD
-  dateTo?: string;   // YYYY-MM-DD
+  dateFrom?: string; 
+  dateTo?: string;  
 };
 
 export async function fetchRoutePlans(params: RouteListParams) {

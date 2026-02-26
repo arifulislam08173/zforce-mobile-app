@@ -29,7 +29,6 @@ api.interceptors.response.use(
         await removeItem(USER_KEY);
         onUnauthorized?.();
       } finally {
-        // allow future 401 handling after a short tick
         setTimeout(() => (alreadyHandling401 = false), 300);
       }
     }
