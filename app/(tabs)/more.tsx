@@ -70,8 +70,8 @@ export default function MoreScreen() {
       </View>
 
       <MenuItem
-        title="Route Plan (Today)"
-        icon="map-outline"
+        title="Route Plan"
+        icon="navigate-outline"
         onPress={() => router.push("/route-plan")}
       />
       <MenuItem
