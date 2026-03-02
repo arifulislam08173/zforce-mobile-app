@@ -335,7 +335,7 @@ export default function FaceScanModal({
   );
 }
 
-// tiny helper (no import needed)
+// tiny helper
 const StyleSheetFill: any = {
   position: "absolute",
   left: 0,

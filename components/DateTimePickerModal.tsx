@@ -39,12 +39,6 @@ function parseLocalDate(value: string, mode: "date" | "datetime") {
   return new Date(y, m - 1, d, Number.isFinite(hh) ? hh : 0, Number.isFinite(mm) ? mm : 0);
 }
 
-/**
- * Reusable picker modal:
- * - mode="date" returns "YYYY-MM-DD"
- * - mode="datetime" returns "YYYY-MM-DDTHH:mm"
- * ✅ Works on native + web
- */
 export default function DateTimePickerModal({
   open,
   title,
